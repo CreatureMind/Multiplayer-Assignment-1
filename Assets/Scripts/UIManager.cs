@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     [Header("Templates")]
     [SerializeField] private VisualTreeAsset sessionRowTemplate;
     [SerializeField] private VisualTreeAsset roomRowTemplate;
+    [SerializeField] private VisualTreeAsset playerRowTemplate;
     
     private void Awake()
     {
@@ -52,7 +53,7 @@ public class UIManager : MonoBehaviour
         _uiDocument.visualTreeAsset = sessionsListView;
         var root = _uiDocument.rootVisualElement;
         
-        var scrollView = root.Q<ScrollView>("session-scroll-view");
+        var scrollView = root.Q<ScrollView>("sessions-scroll-view");
         if (scrollView == null)
         {
             Debug.LogError("Could not find ListView named 'session-scroll-view' in sessionsListView.");

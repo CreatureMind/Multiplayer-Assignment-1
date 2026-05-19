@@ -2,6 +2,6 @@
     <Style src="project://database/Assets/UI%20Toolkit/Styles/LobbyStyle.uss?fileID=7433441132597879392&amp;guid=c1ae93633323eed4e9baa1825210ea51&amp;type=3#LobbyStyle"/>
     <ui:VisualElement name="container" style="flex-grow: 1;">
         <ui:Label text="Lobbies" name="header" class="header"/>
-        <ui:ScrollView name="session-scroll-view" style="margin-right: 200px; margin-bottom: 200px; margin-left: 200px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; background-color: rgba(0, 0, 0, 0.5); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; height: 100%;"/>
+        <ui:ScrollView name="sessions-scroll-view" style="margin-right: 200px; margin-bottom: 200px; margin-left: 200px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; background-color: rgba(0, 0, 0, 0.5); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; height: 100%;"/>
     </ui:VisualElement>
 </ui:UXML>

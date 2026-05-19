@@ -15,3 +15,5 @@ MonoBehaviour:
   sessionsList:
   - sessionName: Lobby 1
   - sessionName: Lobby 2
+  - sessionName: Lobby 3
+  - sessionName: Lobby 4

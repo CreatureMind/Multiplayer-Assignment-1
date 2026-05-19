@@ -155,7 +155,7 @@ Camera:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -452,10 +452,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   sessionsListView: {fileID: 9197481963319205126, guid: 71b967a6e53c1214d919d859736bbba3, type: 3}
-  roomsListView: {fileID: 9197481963319205126, guid: f4c408ca1e94d914288f6a4cbd4921a4, type: 3}
-  roomView: {fileID: 0}
+  roomsListView: {fileID: 9197481963319205126, guid: cd1b07f45798745ca8e06a49c9d457f5, type: 3}
+  roomView: {fileID: 9197481963319205126, guid: f094f8ba955284137b58c232ec42a683, type: 3}
   sessionRowTemplate: {fileID: 9197481963319205126, guid: dec3da7e1019c1d478ff2aa11cd25423, type: 3}
-  roomRowTemplate: {fileID: 9197481963319205126, guid: fab314c5402055842ba0a893aa322081, type: 3}
+  roomRowTemplate: {fileID: 9197481963319205126, guid: 9b893dc89b43345148e01f876e5fb0a9, type: 3}
+  playerRowTemplate: {fileID: 9197481963319205126, guid: 9eaf5c57440274d92a8b080d009d0319, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
