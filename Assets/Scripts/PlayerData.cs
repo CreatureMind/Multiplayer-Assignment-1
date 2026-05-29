@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerData : NetworkBehaviour
 {
     [Networked, OnChangedRender(nameof(OnDisplayNameChanged))]
-    public NetworkString<_32> DisplayName { get; set; }
+    public NetworkString<_32> DisplayName { get; private set; }
 
     [Networked, OnChangedRender(nameof(OnReadyStatusChanged))]
     public NetworkBool IsReady { get; set; }
@@ -15,7 +15,6 @@ public class PlayerData : NetworkBehaviour
     {
         if (HasStateAuthority)
         {
-            // Set your own name when you spawn
             DisplayName = PlayerPrefs.GetString("PlayerName", $"Player_{Random.Range(1000, 9999)}");
         }
         

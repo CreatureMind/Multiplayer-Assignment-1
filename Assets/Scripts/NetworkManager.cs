@@ -17,7 +17,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     
     public ReadyManager ReadyManagerInstance { get; set; }
 
-    public const int MIN_PLAYERS_TO_START = 2;
+    private const int MIN_PLAYERS_TO_START = 2;
 
     private NetworkRunner _networkRunnerInstance;
 
@@ -183,7 +183,7 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
     public async Task LeaveRoom(string lobbyId)
     {
         await ShutdownRunner();
-        await ConnectToCustomLobby(lobbyId); // rejoin lobby with fresh runner
+        await ConnectToCustomLobby(lobbyId);
     }
     
     #endregion
@@ -298,7 +298,6 @@ public class NetworkManager : MonoBehaviour, INetworkRunnerCallbacks
             TotalPlayers = totalPlayersInThisLobby
         };
         
-        // Send filtered room listings and calculated lobby population metrics to UI
         EventBus.Raise(_cachedSessionData.Value);
     }
 

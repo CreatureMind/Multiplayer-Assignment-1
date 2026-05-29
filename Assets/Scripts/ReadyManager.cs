@@ -7,7 +7,7 @@ using UnityEngine;
 public class ReadyManager : NetworkBehaviour
 {
     [Networked, OnChangedRender(nameof(OnMatchStartedChanged))]
-    public NetworkBool MatchStarted { get; private set; }
+    private NetworkBool MatchStarted { get; set; }
 
     public override void Spawned()
     {
@@ -28,6 +28,9 @@ public class ReadyManager : NetworkBehaviour
     {
         if (!HasStateAuthority) return;
         MatchStarted = true;
+        
+        Runner.SessionInfo.IsOpen    = false;
+        Runner.SessionInfo.IsVisible = false;
     }
 
     private void OnMatchStartedChanged()
