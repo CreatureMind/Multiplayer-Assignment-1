@@ -1,26 +1,38 @@
 using System;
+using System.Linq;
+using Events;
 using Fusion;
 using UnityEngine;
 
 public class ReadyManager : NetworkBehaviour
 {
-    public static event Action OnReadyCounterReachedMax;
-    public int readyCounter = 0;
-
-    [Rpc]
-    public void SetReadyRpc(RpcInfo info = default)
-    {
-        Debug.Log($"Player {info.Source.PlayerId} is ready! {readyCounter}");
-        readyCounter++;
-        if (readyCounter >= 2)
-        {
-            OnReadyCounterReachedMax?.Invoke();
-        }
-    }
+    [Networked, OnChangedRender(nameof(OnMatchStartedChanged))]
+    public NetworkBool MatchStarted { get; private set; }
 
     public override void Spawned()
     {
-        base.Spawned();
-        NetworkManager.Instance.readyManagerInstance = this;
+        NetworkManager.Instance.ReadyManagerInstance = this;
+    }
+    
+    [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
+    public void KickPlayerRpc(PlayerRef playerToKick)
+    {
+        if (Runner.LocalPlayer == playerToKick)
+        {
+            Debug.Log("I was kicked, leaving room...");
+            _ = NetworkManager.Instance.LeaveRoom(NetworkManager.Instance.CurrentLobbyId);
+        }
+    }
+
+    public void StartMatch()
+    {
+        if (!HasStateAuthority) return;
+        MatchStarted = true;
+    }
+
+    private void OnMatchStartedChanged()
+    {
+        if (MatchStarted)
+            EventBus.Raise(new MatchStartedEvent());
     }
 }

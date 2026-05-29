@@ -7,7 +7,6 @@
             </Bindings>
         </ui:Label>
         <ui:VisualElement name="VisualElement" style="flex-grow: 1; flex-direction: row; justify-content: flex-end; align-self: auto; align-items: center; align-content: auto; width: 50%; height: 100%;">
-            <ui:Label text="00" name="player-count" class="Lable" style="padding-left: 4px; padding-right: 4px; margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px; align-items: stretch;"/>
             <ui:Button text="Enter" name="enter-button" style="-unity-text-align: middle-center; justify-content: flex-start; align-items: auto; align-self: auto; align-content: auto; margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px;"/>
         </ui:VisualElement>
     </ui:VisualElement>
